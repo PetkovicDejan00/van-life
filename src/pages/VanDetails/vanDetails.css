@@ -1,0 +1,86 @@
+.van-details-container {
+    padding: 32px;
+}
+
+.van-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.van-details img {
+    max-width: 500px;
+    border-radius: 5px;
+    margin-right: 2rem;
+}
+
+.van-details-text {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.van-details-text button {
+    background: #FF8C38;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+.van-details-text div .van-desc {
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.van-details-text div .van-price span {
+    font-weight: 600;
+    line-height: 44px;
+    font-size: 24px;
+}
+.van-details-text div .van-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+}
+
+.link-button:hover {
+    background: #ca6e2d;
+}
+
+@media (max-width: 789px) {
+    .van-details {
+        flex-direction: column;
+        text-align: center;
+        padding-inline: 10px;
+    }
+
+    .detail-page-tag {
+        margin: 0 auto;
+    }
+
+    .van-details img {
+        max-width: 500px;
+        margin: 0;
+    }
+
+    .van-details-text {
+        padding-inline: 10px;
+    }
+
+    .van-details-container {
+        padding: 0;
+        margin: 0 auto 50px auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .van-details img {
+        max-width: 90%;
+    }
+}

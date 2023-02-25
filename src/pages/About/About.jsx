@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import bgImg from '../../assets/images/about-heroo.jpg'
+import bgImg from '../../assets/images/about-hero.jpg'
 import './about.css'
 
 const About = () => {

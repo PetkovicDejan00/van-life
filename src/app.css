@@ -13,6 +13,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -28,9 +33,9 @@ body {
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform .1s ease-in-out;
+    transition: 0.3s ease;
 }
 
 .link-button:hover {
-    transform: translate(1px, 1px);
+    background: #ca6e2d;
 }

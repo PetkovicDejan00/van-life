@@ -3,6 +3,7 @@ header {
     display: flex;
     align-items: center;
     padding-block: 10px;
+    width: 100%;
 }
 
 header .site-logo {
@@ -14,7 +15,7 @@ header .site-logo {
 }
 
 header .site-logo img {
-    width: 160px;
+    max-width: 160px;
 }
 
 header a {
@@ -22,9 +23,21 @@ header a {
     color: #4D4D4D;
     font-weight: 600;
     padding: 5px 20px;
+    transition: 0.3s ease;
 }
 
 header a:hover {
     color: #161616;
-    text-decoration: underline;
+}
+
+@media (max-width: 365px) {
+    header {
+        flex-direction: column;
+    }
+
+    header .site-logo {
+        width: 150px;
+        margin: 0 auto;
+        padding-inline: 0;
+    }
 }

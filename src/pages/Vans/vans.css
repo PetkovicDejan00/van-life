@@ -1,0 +1,90 @@
+.vans-section {
+    padding-inline: 32px;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.vans-page-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.vans-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.van-name_price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.van-type-tag {
+    margin-top: 0;
+    color: #FFEAD0;
+    width: 85px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 32px;
+}
+
+.simple {
+    background: #E17654;
+}
+.rugged {
+    background: #115E59;
+}
+.luxury {
+    background: #161616;
+}
+
+.rent-price h3 {
+    margin-bottom: 0;
+}
+.rent-price span {
+    font-size: 14px;
+    float: right;
+}
+
+@media (max-width: 905px) {
+    .vans-page-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .vans-page-container {
+        gap: 1.5rem;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .van-type-tag {
+        font-size: 14px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 415px) {
+    .vans-page-container {
+        grid-template-columns: 1fr;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .van-type-tag {
+        font-size: 16px;
+        line-height: 32px;
+    }
+}
