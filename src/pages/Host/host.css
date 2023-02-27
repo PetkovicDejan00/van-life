@@ -1,0 +1,116 @@
+/* HostVans component */
+
+.host-vans-section {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.host-vans-card {
+    width: 100%;
+}
+
+.host-vans-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+@media (max-width:650px) {
+    .host-vans-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .host-vans-card a {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        background: #113c3015;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    .host-vans-card img {
+        max-width: 120px;
+        min-width: 80px;
+        margin-right: 1rem;
+    }
+
+}
+
+/* HostVanDetails component */
+
+.host-van-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 32px;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    background: #113c3015;
+}
+
+.host-van-details-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.host-van-details-header-text {
+    display: flex;
+    flex-direction: column;
+}
+.host-van-details-header-text * {
+    margin-block: 10px;
+}
+
+.host-van-details-header img {
+    max-width: 250px;
+    border-radius: 5px;
+    margin-right: 2rem;
+}
+
+.host-links {
+    margin-block: 2rem;
+}
+
+.host-links a {
+    margin-right: 1rem;
+}
+.host-links a:hover {
+    font-weight: 600;
+}
+
+.host-van-details-text {
+    max-width: 500px;
+}
+
+.host-van-details-text p:nth-of-type(2) {
+    line-height: 24px;
+}
+
+.return-link {
+    padding: 48px 32px 0;
+    text-decoration: underline;
+}
+.return-link a:hover {
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+    .host-van-details {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+    }
+}
+
+@media(max-width: 500px) {
+    .host-van-details-header img {
+        max-width: 150px;
+    }
+    .host-van-details {
+        padding: 1rem;
+    }
+}

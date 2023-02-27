@@ -84,7 +84,10 @@
     }
 
     .van-type-tag {
-        font-size: 16px;
-        line-height: 32px;
+        width: 60px;
+    }
+
+    .van-title {
+        font-size: 18px;
     }
 }

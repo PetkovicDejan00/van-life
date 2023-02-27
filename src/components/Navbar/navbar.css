@@ -30,7 +30,11 @@ header a:hover {
     color: #161616;
 }
 
-@media (max-width: 365px) {
+.active {
+    color: #000;
+}
+
+@media (max-width: 440px) {
     header {
         flex-direction: column;
     }
