@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import './host.css'
+import '../host.css'
 
 const HostVans = () => {
     const [listedVans, setListedVans] = useState([])
@@ -13,7 +13,7 @@ const HostVans = () => {
 
     return (
         <section className="container">
-            <h1>Your listed vans</h1>
+            <h1 className="host-vans-header">Your listed vans</h1>
             {listedVans.length > 1 ? 
                 <div className="host-vans-section">
                     {listedVans?.map((van) => {

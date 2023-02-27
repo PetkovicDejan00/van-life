@@ -16,6 +16,10 @@
     border-radius: 5px;
 }
 
+.host-vans-header {
+    font-size: 32px;
+}
+
 @media (max-width:650px) {
     .host-vans-section {
         grid-template-columns: 1fr;
@@ -32,10 +36,8 @@
     }
     .host-vans-card img {
         max-width: 120px;
-        min-width: 80px;
         margin-right: 1rem;
     }
-
 }
 
 /* HostVanDetails component */
@@ -43,8 +45,7 @@
 .host-van-details {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
     margin: 32px;
     padding: 4rem 2rem;
     border-radius: 10px;
@@ -55,6 +56,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-right: 160px;
 }
 
 .host-van-details-header-text {
@@ -72,14 +74,19 @@
 }
 
 .host-links {
-    margin-block: 2rem;
+    margin-block: 0 2rem;
 }
 
 .host-links a {
     margin-right: 1rem;
 }
 .host-links a:hover {
+    text-decoration: underline;
+}
+.host-links .active {
     font-weight: 600;
+    text-decoration: underline;
+    color: #343434;
 }
 
 .host-van-details-text {
@@ -104,6 +111,9 @@
         align-items: flex-start;
         padding: 2rem;
     }
+    .host-links {
+        margin-block:2rem;
+    }
 }
 
 @media(max-width: 500px) {
@@ -113,4 +123,19 @@
     .host-van-details {
         padding: 1rem;
     }
+}
+
+
+/* HostVanPhoto */
+
+.host-van-photo {
+    max-width: 120px;
+    border-radius: 10px;
+}
+
+/* HostVanPricing */
+
+.host-van-pricing span {
+    font-size: 18px;
+    font-weight: 400;
 }

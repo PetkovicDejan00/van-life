@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {useParams, NavLink, Link} from 'react-router-dom'
+import {useParams, NavLink, Link, Outlet} from 'react-router-dom'
 
 const HostVanDetails = () => {
     const params = useParams()
@@ -20,7 +20,7 @@ const HostVanDetails = () => {
     return (
         <>
             <div className="return-link">
-                <Link to="/host/vans">🡠 Back to all vans</Link>
+                <Link to=".." relative="path">🡠 Back to all vans</Link>
             </div>
             {hostVan ? (
                 <div className="host-van-details">
@@ -34,14 +34,14 @@ const HostVanDetails = () => {
                     </div>
 
                     <div className="host-van-details-text">
-                    <div className="host-links">
-                        <NavLink>Details</NavLink>
-                        <NavLink>Pricing</NavLink>
-                        <NavLink>Photos</NavLink>
-                    </div>
-                        <p><b>Name: </b>{hostVan.name}</p>
-                        <p><b>Description: </b>{hostVan.description}</p>
-                        <p><b>Visibility: </b>Public</p>
+                        <div className="host-links">
+                            <NavLink to="." end>Details</NavLink>
+                            <NavLink to="pricing">Pricing</NavLink>
+                            <NavLink to="photos">Photos</NavLink>
+                        </div>
+                        <Outlet 
+                            context={[hostVan]}
+                        />
                     </div>
                 </div>
             ) : <h2>Loading...</h2>
