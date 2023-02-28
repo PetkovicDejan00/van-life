@@ -98,8 +98,13 @@
 }
 
 .return-link {
-    padding: 48px 32px 0;
     text-decoration: underline;
+}
+.host-return {
+    padding: 48px 32px 0;
+}
+.vans-return {
+    margin-bottom: 32px;
 }
 .return-link a:hover {
     font-weight: 600;

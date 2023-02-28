@@ -1,20 +1,19 @@
 .van-details-container {
-    padding: 32px;
+    padding:0 32px 32px;
 }
 
 .van-details {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     max-width: 1200px;
-    margin: 0 auto;
 }
 
 .van-details img {
     max-width: 500px;
     border-radius: 5px;
-    margin-right: 2rem;
+    margin-right: 5rem;
 }
 
 .van-details-text {
@@ -52,6 +51,16 @@
 .link-button:hover {
     background: #ca6e2d;
 }
+@media(max-width: 1150px) {
+    .van-details img {
+        margin-right: 2rem;
+    }
+}
+@media(max-width: 848px) {
+    .van-details img {
+        max-width: 400px;
+    }
+}
 
 @media (max-width: 789px) {
     .van-details {
@@ -76,6 +85,9 @@
     .van-details-container {
         padding: 0;
         margin: 0 auto 50px auto;
+    }
+    .vans-return {
+        margin-left: 32px;
     }
 }
 

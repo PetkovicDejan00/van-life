@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import './vanDetails.css'
 
 const VanDetails = () => {
@@ -14,6 +14,9 @@ const VanDetails = () => {
 
     return (
         <div className="van-details-container">
+            <div className="return-link vans-return">
+                <Link to=".." relative="path">🡠 Back to all vans</Link>
+            </div>
             {van ? (
                 <div className="van-details">
                     <img src={van.imageUrl} />

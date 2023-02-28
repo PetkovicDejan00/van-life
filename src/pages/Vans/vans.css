@@ -44,6 +44,54 @@
 .luxury {
     background: #161616;
 }
+.van-list-filter-buttons {
+    margin-bottom: 2rem;
+}
+
+.clear-filters {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: underline;
+    color: #4D4D4D;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+.clear-filters:hover {
+    color: #000;
+}
+
+.van-type {
+    background: #FFEAD0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #4D4D4D;
+    padding: 0.5rem 1.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.van-type.simple-filter:hover, .van-type.simple-filter.selected {
+    background-color: #E17654;
+    color: white;
+}
+
+.van-type.rugged-filter:hover, .van-type.rugged-filter.selected {
+    background-color: #115E59;
+    color: white;
+}
+
+.van-type.luxury-filter:hover, .van-type.luxury-filter.selected {
+    background-color: #161616;
+    color: white;
+}
+
 
 .rent-price h3 {
     margin-bottom: 0;
@@ -59,7 +107,7 @@
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 524px) {
     .vans-page-container {
         gap: 1.5rem;
     }
@@ -71,6 +119,21 @@
     .van-type-tag {
         font-size: 14px;
         line-height: 28px;
+    }
+    .van-type,
+    .clear-filters {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .van-type {
+        padding-inline: 1rem;
+    }
+}
+
+@media(max-width:490px) {
+    .van-type,
+    .clear-filters {
+        margin-top: 0.5rem;
     }
 }
 

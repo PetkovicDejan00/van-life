@@ -20,7 +20,7 @@ const HostVans = () => {
                         const {id, name, price, imageUrl} = van;
                         return (
                             <article className="host-vans-card" key={id}>
-                                <Link to={`/host/vans/${id}`}>
+                                <Link to={id}>
                                     <img src={imageUrl} />
                                     <div>
                                         <h3>{name}</h3>

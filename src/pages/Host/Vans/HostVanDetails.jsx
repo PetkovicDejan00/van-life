@@ -19,7 +19,7 @@ const HostVanDetails = () => {
 
     return (
         <>
-            <div className="return-link">
+            <div className="return-link host-return">
                 <Link to=".." relative="path">🡠 Back to all vans</Link>
             </div>
             {hostVan ? (
@@ -39,9 +39,7 @@ const HostVanDetails = () => {
                             <NavLink to="pricing">Pricing</NavLink>
                             <NavLink to="photos">Photos</NavLink>
                         </div>
-                        <Outlet 
-                            context={[hostVan]}
-                        />
+                        <Outlet context={[hostVan]} />
                     </div>
                 </div>
             ) : <h2>Loading...</h2>
