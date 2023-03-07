@@ -22,3 +22,5 @@ password: q123
 
 One part of website data is hard-coded (Host Dashboard, Host Income and Host Reviews).
 Again, this website is created by React Router practicing and that's the reason for mentioned sections use.
+
+Do not refresh the page on the Netlify's live version because website is going to crash, that's the bug from the platform, code is working perfectly by running from VS code.
