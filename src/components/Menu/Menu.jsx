@@ -31,9 +31,11 @@ return (
         </div>
         {openMenu &&
             <div className={`menu-panel ${openMenu && 'panel-active'}`}>
+                {!localStorage.loggedIn &&
                 <NavLink onClick={() => toggleMenuPanel()} to="/login">
                     <img src={loginIcon} alt="logo icon" />
                 </NavLink>
+                }
                 <NavLink onClick={() => toggleMenuPanel()} to="/host">Host</NavLink>
                 <NavLink onClick={() => toggleMenuPanel()} to="/about">About</NavLink>
                 <NavLink onClick={() => toggleMenuPanel()} to="/vans">Vans</NavLink>

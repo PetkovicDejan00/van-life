@@ -22,9 +22,11 @@ const Navbar = () => {
             <NavLink to="/host">Host</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/vans">Vans</NavLink>
+            {!localStorage.loggedIn &&
             <NavLink to="/login">
               <img src={loginIcon} alt="logo icon" />
             </NavLink>
+            }
             {localStorage.loggedIn && 
               <Link onClick={fakeLogOut}>Logout</Link>
             }
