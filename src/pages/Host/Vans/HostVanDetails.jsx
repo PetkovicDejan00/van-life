@@ -1,21 +1,21 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {useParams, NavLink, Link, Outlet} from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+import LoadingCircle from '../../../components/LoadingCircle/LoadingCircle'
+import { getSingleHostVan } from '../../../api/api'
 
 const HostVanDetails = () => {
     const params = useParams()
-    const [hostVan, setHostVan] = useState([])
-    
-    useEffect(() => {
-        fetch(`/api/host/vans/${params.id}`)
-        .then(res => res.json())
-        .then(data => setHostVan(data.vans))
-    }, [params.id])
 
-    console.log(hostVan)
+    const {isFetching, isError, error, data} = useQuery({
+        queryKey: ['host-van'],
+        queryFn: () => getSingleHostVan(params.id)
+    })
 
-    if (!hostVan) {
-        return <h1>Loading...</h1>
-    }
+    const hostVan = data?.data?.vans
+
+    if (isFetching) return <LoadingCircle />
+    if (isError) return <h1 className="error-message">{error.message}</h1>
 
     return (
         <>
@@ -42,7 +42,7 @@ const HostVanDetails = () => {
                         <Outlet context={[hostVan]} />
                     </div>
                 </div>
-            ) : <h2>Loading...</h2>
+            ) : <h1 className="container">Wanted van is not on the list.</h1>
             }
         </>
     )

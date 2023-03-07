@@ -1,47 +1,57 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './pages/Home/Home'
-import About from './pages/About/About'
-import Vans from './pages/Vans/Vans'
-import VanDetails from './pages/VanDetails/VanDetails'
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements, 
+  Route} 
+  from 'react-router-dom'
 import './app.css'
 import '../server'
-import Layout from './components/Layout/Layout'
-import HostLayout from './components/HostLayout/HostLayout'
-import Dashboard from './pages/Host/Dashboard'
-import Income from './pages/Host/Income'
-import Reviews from './pages/Host/Reviews'
-import HostVans from './pages/Host/Vans/HostVans'
-import HostVanDetails from './pages/Host/Vans/HostVanDetails'
-import HostVanInfo from './pages/Host/Vans/HostVanInfo'
-import HostVanPricing from './pages/Host/Vans/HostVanPricing'
-import HostVanPhoto from './pages/Host/Vans/HostVanPhoto'
+import {
+  Home, About, Vans, VanDetails, Layout, HostLayout, 
+  Dashboard, Income, Reviews, HostVans, HostVanDetails, 
+  HostVanInfo, HostVanPricing, HostVanPhoto, ErrorPage, Login,
+  action as loginAction, AuthRequired
+} from './imports.js'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<Layout />}>
+    <Route index element={<Home />} />
+    <Route path="about" element={<About />} />
+    <Route path="vans" element={<Vans />} />
+    <Route path="vans/:id" element={<VanDetails />} />
+    <Route path="login" element={<Login />} action={loginAction} />
+
+    <Route element={<AuthRequired />} >
+      <Route path="host" element={<HostLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="income" element={<Income />} />
+        <Route path="reviews" element={<Reviews />} />
+        <Route path="vans" element={<HostVans />} />
+        <Route path="vans/:id" element={<HostVanDetails />} >
+          <Route index element={<HostVanInfo />} />
+          <Route path="pricing" element={<HostVanPricing />} />
+          <Route path="photos" element={<HostVanPhoto />} />
+        </Route>
+      </Route>
+    </Route>
+
+    <Route path="*" element={<ErrorPage />} />
+  </Route>
+))
 
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { refetchOnWindowFocus: false, keepPreviousData: true, retry: 1 }}
+  })
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="vans" element={<Vans />} />
-          <Route path="vans/:id" element={<VanDetails />} />
-
-          <Route path="host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVanDetails />} >
-              <Route index element={<HostVanInfo />} />
-              <Route path="pricing" element={<HostVanPricing />} />
-              <Route path="photos" element={<HostVanPhoto />} />
-            </Route>
-          </Route>
-
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   )
 }
 

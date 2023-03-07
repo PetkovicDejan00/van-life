@@ -5,7 +5,7 @@ import './hostLayout.css'
 const HostLayout = () => {
   return (
     <>
-        <div className="host-layout">
+        <div className="host-layout container">
             <NavLink to="." end>Dashboard</NavLink>
             <NavLink to="income">Income</NavLink>
             <NavLink to="vans">Vans</NavLink>

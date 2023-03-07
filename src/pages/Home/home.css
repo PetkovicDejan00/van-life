@@ -1,22 +1,20 @@
 .home-container {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url('../../assets/images/home-hero.png') no-repeat top center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 350px;
-    color: white;
-    padding: 45px 23px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .home-container h1 {
     font-weight: 700;
     font-size: 2.25rem;
+    font-size: 48px;
     line-height: 42px;
+    color: #2e2b2b;
 }
 
 .home-container p {
     line-height: 24px;
+    font-size: 20px;
 }
 
 .home-container a {
@@ -35,6 +33,59 @@
     transition: 0.3s ease;
 }
 
+.home-container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-size: contain;
+    margin-inline: 10px;
+}
+
+
 .home-container a:hover {
     background: #ca6e2d;
+}
+
+@media (max-width: 1147px) {
+    .home-container h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1025px) {
+    .home-container img {
+        width: 200px;
+        height: 200px;
+    }
+    .home-container p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 650px) {
+    .home-container h1 {
+        font-size: 32px;
+    }
+    .home-container p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container img:nth-of-type(2),
+    .home-container img:nth-of-type(3)
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .home-container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .home-container a {
+        max-width: 240px;
+    }
 }

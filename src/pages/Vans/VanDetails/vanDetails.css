@@ -1,7 +1,3 @@
-.van-details-container {
-    padding:0 32px 32px;
-}
-
 .van-details {
     display: flex;
     flex-direction: row;

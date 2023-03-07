@@ -1,17 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {Link, useSearchParams} from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+import { getVans } from '../../api/api'
 import './vans.css'
+import LoadingCircle from '../../components/LoadingCircle/LoadingCircle'
 
 const Vans = () => {
-  const [vansData, setVansData] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
 
-  useEffect(() => {
-    fetch("/api/vans")
-    .then(res => res.json())
-    .then(data => setVansData(data.vans))
-  }, [])
-
+  const {isLoading, isError, error, data} = useQuery({
+    queryKey: ['vans'],
+    queryFn: () => getVans()
+  })
+  const vansData = data?.data.vans
   const typeFilter = searchParams.get('type')
   
   const displayedVans = typeFilter 
@@ -22,14 +23,14 @@ const Vans = () => {
     const {id, imageUrl, name, price, type} = van;
     return (
       <div key={id} className="vans-card">
-        <Link to={id}>
+        <Link to={id} state={{
+        search: `?${searchParams.toString()}`, 
+        type: typeFilter
+        }}>
           <img src={imageUrl} />
           <div className="van-name_price">
             <h3>{name}</h3>
-            <div className="rent-price">
-              <h3>{`$${price}`}</h3>
-              <span>/day</span>
-            </div>
+            <h3 className="rent-price">{`$${price}`}<span>/day</span></h3>
           </div>
           <h4 className={`van-type-tag ${type}`}>
             {type}
@@ -50,8 +51,11 @@ const Vans = () => {
     })
   }
 
+  if (isLoading) return <LoadingCircle />
+  if (isError) return <h1 className="error-message">{error.message}</h1>
+
   return (
-    <section className="vans-section">
+    <section className="vans-section container">
       <h1 className="section-title">Explore our van options</h1>
       <div className="van-list-filter-buttons">
         <button 

@@ -1,12 +1,14 @@
+.host-layout {
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .host-layout a {
-    margin-right: 15px;
     color: #4D4D4D;
     font-weight: 500;
     transition: 0.3s ease;
-}
-
-.host-layout {
-    padding-inline: 32px;
 }
 
 .host-layout a:hover {

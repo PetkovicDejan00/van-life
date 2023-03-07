@@ -1,0 +1,135 @@
+.host-dashboard-earnings {
+    background-color: #ffead0;
+    padding-block: 37px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.host-dashboard-earnings > .info > h1 {
+    font-size: 36px;
+    color: #161616;
+    margin: 0;
+}
+
+.host-dashboard-earnings > .info > p {
+    color: #4d4d4d;
+}
+
+.host-dashboard-earnings > .info > p > span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.host-dashboard-earnings > .info > h2 {
+    margin: 0;
+    font-size: 38px;
+    color: #161616;
+    font-weight: 900;
+}
+
+.host-dashboard-reviews {
+    background-color: #ffddb2;
+    padding-block: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.host-dashboard-reviews > h2 {
+    margin: 0;
+}
+
+.host-dashboard-reviews .star {
+    color: #ff8c38;
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.host-dashboard-reviews p {
+    margin-left: 5px;
+    font-size: 20px;
+    color: #4d4d4d;
+    margin-right: auto;
+}
+
+.host-dashboard-reviews p > span {
+    font-weight: bold;
+    color: #161616;
+}
+
+.host-dashboard-vans {
+    padding-block: 38px;
+}
+
+.host-dashboard-vans > .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-inline: 32px; */
+}
+
+.host-vans-section {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.dashboard-van-card {
+    width: 100%;
+}
+
+.dashboard-van-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+.dashboard-van-card a:hover,
+.host-dashboard-earnings a:hover,
+.host-dashboard-reviews a:hover,
+.host-dashboard-vans a:hover
+{
+    text-decoration: underline
+}
+
+@media (max-width:650px) {
+    .host-vans-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .dashboard-van-card {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        background: #113c300e;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    .dashboard-van-card img {
+        max-width: 120px;
+        margin-right: 1rem;
+    }
+    .dashboard-van-card a {
+        margin-left: auto;
+    }
+
+    .host-dashboard-earnings > .info > h1 {
+        font-size: 28px;
+    }
+    .host-dashboard-earnings > .info > h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 370px) {
+    .dashboard-van-card a {
+        display: none;
+    }
+    .host-dashboard-reviews a {
+        margin-left: 10px;
+    }
+    .host-dashboard-vans .top h2 {
+        font-size: 20px;
+    }
+    
+}

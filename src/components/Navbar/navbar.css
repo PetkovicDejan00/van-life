@@ -2,8 +2,11 @@ header {
     height: 110px;
     display: flex;
     align-items: center;
-    padding-block: 10px;
     width: 100%;
+}
+header nav {
+    display: flex;
+    align-items: center;
 }
 
 header .site-logo {
@@ -22,26 +25,30 @@ header a {
     text-decoration: none;
     color: #4D4D4D;
     font-weight: 600;
-    padding: 5px 20px;
     transition: 0.3s ease;
 }
+header nav a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: 0.15s ease;
+}
 
-header a:hover {
+header nav a:hover {
     color: #161616;
+    transform: scale(1.2);
+}
+
+header nav a {
+    margin-left: 25px;
 }
 
 .active {
     color: #161616;
 }
 
-@media (max-width: 440px) {
-    header {
-        flex-direction: column;
-    }
-
-    header .site-logo {
-        width: 150px;
-        margin: 0 auto;
-        padding-inline: 0;
+@media (max-width: 600px) {
+    header nav {
+        display: none;
     }
 }

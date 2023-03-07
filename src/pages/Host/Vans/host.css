@@ -5,6 +5,7 @@
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
+    margin-bottom: 2rem;
 }
 
 .host-vans-card {
@@ -30,13 +31,16 @@
         flex-direction: row;
         width: 100%;
         align-items: center;
-        background: #113c3015;
+        background: #113c300e;
         padding: 1rem;
         border-radius: 10px;
     }
     .host-vans-card img {
         max-width: 120px;
         margin-right: 1rem;
+    }
+    .host-vans-header {
+        font-size: 28px;
     }
 }
 
@@ -49,7 +53,7 @@
     margin: 32px;
     padding: 4rem 2rem;
     border-radius: 10px;
-    background: #113c3015;
+    background: #113c300e;
 }
 
 .host-van-details-header {
@@ -101,7 +105,7 @@
     text-decoration: underline;
 }
 .host-return {
-    padding: 48px 32px 0;
+    padding: 32px 32px 0;
 }
 .vans-return {
     margin-bottom: 32px;
@@ -129,7 +133,6 @@
         padding: 1rem;
     }
 }
-
 
 /* HostVanPhoto */
 
