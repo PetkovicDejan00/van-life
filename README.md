@@ -1,6 +1,9 @@
 # VanLife project website
 
-VanLife website, created by practicing React Router skills with a little bit use of React Query.
+VanLife is a website created with React Router, as well as a little bit of React Query (for fetching data, loadings and errors). 
+
+<img width="750" alt="vanlife" src="https://user-images.githubusercontent.com/104632857/231909388-38269448-d8dc-4162-aa8b-691ed49033e9.png">
+
 
 ## Running instructions
 
